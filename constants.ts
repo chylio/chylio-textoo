@@ -1,0 +1,90 @@
+import type { RankLevels, Doctor, Treatment } from './types';
+
+export const RANK_LEVELS: RankLevels = { Intern: 1, PGY: 2, FR: 3, VS: 4 };
+
+export const BASE_DOCTORS_DATA: Doctor[] = [
+  {
+    id: 1,
+    name: '李偉廷',
+    rank: 'VS',
+    dept: 'OS',
+    monthlyTotal: 120,
+    targets: { 'OS-拔牙': 5, 'OS-植牙': 10, '簡單手術': 5 },
+    currentCases: { 'OS-拔牙': 4, 'OS-植牙': 2, '簡單手術': 1 },
+  },
+  {
+    id: 2,
+    name: '許育瑞',
+    rank: 'FR',
+    dept: 'Pros',
+    monthlyTotal: 95,
+    targets: { 固定假牙: 8, 活動假牙: 5 },
+    currentCases: { 固定假牙: 7, 活動假牙: 1 },
+  },
+  {
+    id: 3,
+    name: '官語晨',
+    rank: 'PGY',
+    dept: 'Perio',
+    monthlyTotal: 80,
+    targets: { 全口洗牙: 15, 牙周手術: 5, 簡單補牙: 10 },
+    currentCases: { 全口洗牙: 12, 牙周手術: 4, 簡單補牙: 2 },
+  },
+  {
+    id: 4,
+    name: '廖怡清',
+    rank: 'VS',
+    dept: 'Endo',
+    monthlyTotal: 110,
+    targets: { 根管治療: 10, 顯微鏡治療: 5 },
+    currentCases: { 根管治療: 9, 顯微鏡治療: 1 },
+  },
+  {
+    id: 5,
+    name: '林靖傑',
+    rank: 'Intern',
+    dept: '家牙',
+    monthlyTotal: 45,
+    targets: { 簡單補牙: 10, 全口洗牙: 15, 簡單拔牙: 5 },
+    currentCases: { 簡單補牙: 1, 全口洗牙: 3, 簡單拔牙: 0 },
+  },
+  {
+    id: 6,
+    name: '李俊育',
+    rank: 'VS',
+    dept: 'Pedo',
+    monthlyTotal: 85,
+    targets: { 乳牙根管: 5, 溝隙封填: 10 },
+    currentCases: { 乳牙根管: 1, 溝隙封填: 5 },
+  },
+  {
+    id: 7,
+    name: '張實習',
+    rank: 'Intern',
+    dept: 'OS',
+    monthlyTotal: 40,
+    targets: { 簡單拔牙: 5, 全口洗牙: 15 },
+    currentCases: { 簡單拔牙: 1, 全口洗牙: 14 },
+  },
+  {
+    id: 8,
+    name: '王住院',
+    rank: 'PGY',
+    dept: 'Endo',
+    monthlyTotal: 75,
+    targets: { 根管治療: 10, 簡單拔牙: 5 },
+    currentCases: { 根管治療: 2, 簡單拔牙: 1 },
+  },
+];
+
+export const TREATMENTS: Treatment[] = [
+  { id: 't1', name: '簡單拔牙', dept: 'OS', minRank: 'Intern' },
+  { id: 't2', name: '複雜阻生齒', dept: 'OS', minRank: 'FR' },
+  { id: 't3', name: 'OS-植牙', dept: 'OS', minRank: 'VS' },
+  { id: 't4', name: '根管治療', dept: 'Endo', minRank: 'Intern' },
+  { id: 't5', name: '顯微鏡治療', dept: 'Endo', minRank: 'VS' },
+  { id: 't6', name: '全口洗牙', dept: 'Perio', minRank: 'Intern' },
+  { id: 't7', name: '牙周手術', dept: 'Perio', minRank: 'FR' },
+  { id: 't8', name: '簡單補牙', dept: '家牙', minRank: 'Intern' },
+  { id: 't9', name: '固定假牙', dept: 'Pros', minRank: 'PGY' },
+];
